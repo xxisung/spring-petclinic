@@ -35,7 +35,7 @@ pipeline {
       
       }      
 
-      stage('')
+      stage('Docker Image Push')
       sh """
       echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin
       docker push jsyw/spring-petclinic:latest
