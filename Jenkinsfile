@@ -14,17 +14,7 @@ pipeline {
         
       }     
     }
-    stage('Maven Bulid') {
-
-  }
-    stage ('Docker Image') {
-    }
-    stage ('DOkcer Image Push') {
-    
-    }
-    stage ('SSH Piblish') {
-
-    } 
+   
     
 
   }
