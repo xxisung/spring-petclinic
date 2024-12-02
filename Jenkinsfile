@@ -19,6 +19,16 @@ pipeline {
         sh 'mvn -Dmaven.test.failure.ignore=true clean package'
       }
     }
+    stage('Docker Image') {
+      steps{
+        dir("$(env.WORKSPACE}"){
+          sh"""
+          docker build -t jsyw/spring=petclinic:$BUILD_NUMBER .
+          docker tag jsyw/spring=petclinic:$BUILD_NUMBER jsyw/spring-petclinic:latest
+          """
+        }
+      }
+    }
 
     
     
