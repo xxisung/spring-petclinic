@@ -27,7 +27,7 @@ pipeline {
     stage('Maven Build') {
       steps {
         echo 'Maven Build'
-        sh 'man -Dmaven.test.failure.ignore=true clean package'
+        sh 'mvn -Dmaven.test.failure.ignore=true clean package'
       }
     }
   //Docker Image 생성
