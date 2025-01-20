@@ -33,7 +33,7 @@ pipeline {
   //Docker Image 생성
      stage('Docker Image Build') {
       steps {
-        echo 'Docker Image build'
+        echo 'Docker Image Build'
         dit("${env.WORKSPACE}")
         sh """
         docker build -t jsyw/spring-petclinic:$BUILD_NUMBER .
