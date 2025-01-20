@@ -10,7 +10,7 @@ pipeline {
   environment {
     DOCKERHUB_CREDENTIALS = credentials('dockerCredential')
     AWS_CREDENTIALS = credentials('AWSCredential')
-    GIT_CREDENTIALS = credentials('gitCredential')
+    //GIT_CREDENTIALS = credentials('gitCredential')
     REGION = 'ap-northeast-2'
   }
 
@@ -19,8 +19,8 @@ pipeline {
     stage('Git Clone') {
       steps {
         echo 'Git Clone'
-        git url: 'https://github.com/xxisung/spring-petclinic.git'
-          branch: 'main', credentialsId: 'GIT_CREDENTIALS'
+        git url: 'https://github.com/xxisung/spring-petclinic.git',
+          branch: 'main'
       }
     }
   }
