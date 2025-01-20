@@ -34,7 +34,7 @@ pipeline {
      stage('Docker Image Build') {
       steps {
         echo 'Docker Image Build'
-        dit("${env.WORKSPACE}")
+        dir("${env.WORKSPACE}")
         sh """
         docker build -t jsyw/spring-petclinic:$BUILD_NUMBER .
         docker tag jsyw/spring-petclinic:$BUILD_NUMBER jsyw/spring-petclinic:latest
