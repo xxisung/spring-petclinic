@@ -58,7 +58,10 @@ pipeline {
         docker rmi jsyw/spring-petclinic:latest
         """
       }
-     }
+    }
+
+
+
 
 
 
